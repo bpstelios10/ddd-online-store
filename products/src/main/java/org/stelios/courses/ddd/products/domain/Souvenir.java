@@ -1,12 +1,17 @@
 package org.stelios.courses.ddd.products.domain;
 
-public class Souvenirs implements IProduct {
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
+@ToString
+@EqualsAndHashCode
+public class Souvenir implements IProduct {
 
     private final String id;
     private final String title;
     private final String description;
 
-    public Souvenirs(String id, String title, String description) {
+    public Souvenir(String id, String title, String description) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -14,16 +19,16 @@ public class Souvenirs implements IProduct {
 
     @Override
     public String getId() {
-        return null;
+        return id;
     }
 
     @Override
     public String getTitle() {
-        return null;
+        return title;
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return description;
     }
 }

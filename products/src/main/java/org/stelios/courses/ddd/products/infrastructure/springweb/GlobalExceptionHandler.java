@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+import org.stelios.courses.ddd.products.repositories.ProductAlreadyExistsException;
 
 @Slf4j
 @ControllerAdvice
@@ -18,5 +19,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .build();
+    }
+
+    @ExceptionHandler({ProductAlreadyExistsException.class})
+    public ResponseEntity<String> handleProductAlreadyExistsException(ProductAlreadyExistsException ex) {
+        log.debug("Handling exception: [{}]", ex.getMessage());
+
+        return ResponseEntity.ok("Product with this id already exists");
     }
 }
