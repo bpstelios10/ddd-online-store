@@ -1,0 +1,9 @@
+server:
+  servlet:
+    context-path: /api/v1
+  tomcat:
+    accept-count: 120
+    mbeanregistry:
+      enabled: true
+    threads:
+      max: 1200
