@@ -1,13 +1,21 @@
 spring:
+  autoconfigure:
+    exclude:
+    - org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+    - org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration
   datasource:
-    url: 'jdbc:h2:mem:events'
+    url: 'jdbc:h2:mem:products'
     driverClassName: 'org.h2.Driver'
     username: 'dbuser'
     password: ''
   jpa:
+    database-platform: 'org.hibernate.dialect.H2Dialect'
     hibernate:
       ddl-auto: 'create'
     show-sql: true
+  mongodb:
+    repositories:
+      enabled: false
   h2:
     console:
       enabled: true
@@ -24,3 +32,7 @@ server:
       enabled: true
     threads:
       max: 1200
+
+service:
+  database:
+    embedded: true

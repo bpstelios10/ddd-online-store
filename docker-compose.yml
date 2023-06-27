@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  products:
+    build: products
+    depends_on:
+      - mongodb
+    ports:
+      - "8080:8080"
+    environment:
+      - DEPLOYMENT_ENVIRONMENT=docker-compose
+
+  mongodb:
+    image: mongo:7.0.0-rc5
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=dbuser
+      - MONGO_INITDB_ROOT_PASSWORD=dbpass
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata6:/data/db
+
+volumes:
+  dbdata6:

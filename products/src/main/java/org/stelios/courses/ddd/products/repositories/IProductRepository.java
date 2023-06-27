@@ -1,13 +1,11 @@
 package org.stelios.courses.ddd.products.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
 import java.util.List;
 import java.util.Optional;
 
-@Repository
-public interface IProductRepository extends JpaRepository<SouvenirEntity, String> {
+public interface IProductRepository {
+
+    SouvenirEntity save(SouvenirEntity entity);
 
     List<SouvenirEntity> findAll();
 
