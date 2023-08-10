@@ -28,7 +28,7 @@ class SouvenirServiceTest {
     private SouvenirService souvenirService;
 
     @Test
-    void getAllProducts_returnsProducts_whenSomeExist() {
+    void getAll_returnsSouvenirs_whenSomeExist() {
         SouvenirEntity souvenirEntity1 = new SouvenirEntity("id1", "title1", "description1");
         SouvenirEntity souvenirEntity2 = new SouvenirEntity("id2", "title2", "description2");
         Souvenir souvenir1 = SouvenirFactory.create("id1", "title1", "description1");
@@ -36,17 +36,17 @@ class SouvenirServiceTest {
         when(repository.findAll()).thenReturn(List.of(souvenirEntity1, souvenirEntity2));
         List<Souvenir> expectedResponse = List.of(souvenir1, souvenir2);
 
-        List<Souvenir> actualResponse = souvenirService.getAllProducts();
+        List<Souvenir> actualResponse = souvenirService.getAll();
 
         assertThat(expectedResponse).isEqualTo(actualResponse);
     }
 
     @Test
-    void getAllProducts_returnsEmptyResponse_whenNoProducts() {
+    void getAll_returnsEmptyResponse_whenNoSouvenirs() {
         when(repository.findAll()).thenReturn(List.of());
         List<Souvenir> expectedResponse = List.of();
 
-        List<Souvenir> actualResponse = souvenirService.getAllProducts();
+        List<Souvenir> actualResponse = souvenirService.getAll();
 
         assertThat(expectedResponse).isEqualTo(actualResponse);
     }
@@ -62,7 +62,7 @@ class SouvenirServiceTest {
     }
 
     @Test
-    void save_throwsException_whenProductExists() {
+    void save_throwsException_whenSouvenirExists() {
         SouvenirEntity souvenirEntity1 = new SouvenirEntity("id1", "title1", "description1");
         Souvenir souvenir1 = SouvenirFactory.create("id1", "title1", "description1");
         when(repository.findById("id1")).thenReturn(Optional.of(souvenirEntity1));

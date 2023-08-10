@@ -21,7 +21,7 @@ public class SouvenirService {
         this.repository = repository;
     }
 
-    public List<Souvenir> getAllProducts() {
+    public List<Souvenir> getAll() {
         return repository.findAll()
                 .stream()
                 .map(e -> SouvenirFactory.create(e.getId(), e.getTitle(), e.getDescription()))
