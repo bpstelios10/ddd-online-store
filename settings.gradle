@@ -1,3 +1,5 @@
 rootProject.name = 'ddd-online-store'
 
 include 'products'
+include 'branches'
+
