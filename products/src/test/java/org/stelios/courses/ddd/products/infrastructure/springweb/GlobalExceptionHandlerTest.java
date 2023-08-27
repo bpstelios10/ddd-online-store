@@ -3,7 +3,7 @@ package org.stelios.courses.ddd.products.infrastructure.springweb;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.stelios.courses.ddd.products.repositories.ProductAlreadyExistsException;
+import org.stelios.courses.ddd.products.application.errors.ProductAlreadyExistsException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import org.stelios.courses.ddd.products.repositories.ProductAlreadyExistsException;
+import org.stelios.courses.ddd.products.application.errors.ProductAlreadyExistsException;
 
 @Slf4j
 @ControllerAdvice

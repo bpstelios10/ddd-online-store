@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.stelios.courses.ddd.products.application.SouvenirService;
-import org.stelios.courses.ddd.products.domain.IProduct;
+import org.stelios.courses.ddd.products.repositories.ProductEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,9 +23,9 @@ public class ProductsController {
     }
 
     @GetMapping
-    public ResponseEntity<List<IProduct>> getAllProducts() {
+    public ResponseEntity<List<ProductEntity>> getAllProducts() {
         log.info("request for all products");
-        List<IProduct> products = new ArrayList<>();
+        List<ProductEntity> products = new ArrayList<>();
         products.addAll(souvenirService.getAll());
 
         return ResponseEntity.ok(products);

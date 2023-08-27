@@ -1,4 +1,4 @@
-package org.stelios.courses.ddd.products.repositories;
+package org.stelios.courses.ddd.products.application.errors;
 
 import lombok.extern.slf4j.Slf4j;
 
