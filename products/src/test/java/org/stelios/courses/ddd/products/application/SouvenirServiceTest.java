@@ -62,6 +62,7 @@ class SouvenirServiceTest {
         when(repository.findById("id1")).thenReturn(Optional.of(souvenirEntity1));
 
         assertThatThrownBy(() -> souvenirService.save(souvenirEntity1))
-                .isInstanceOf(ProductAlreadyExistsException.class);
+                .isInstanceOf(ProductAlreadyExistsException.class)
+                .hasMessage("Trying to save existing product");
     }
 }

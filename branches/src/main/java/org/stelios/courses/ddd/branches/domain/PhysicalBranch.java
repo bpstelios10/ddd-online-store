@@ -1,5 +1,10 @@
 package org.stelios.courses.ddd.branches.domain;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
+@ToString
+@EqualsAndHashCode
 public class PhysicalBranch implements IBranch {
 
     private final int id;
