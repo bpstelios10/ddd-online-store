@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @ConditionalOnProperty(value = "service.database.embedded", havingValue = "true")
-public interface IPhysicalBranchJPARepository extends JpaRepository<PhysicalBranchEntity, String>, IPhysicalBranchRepository {
+public interface IStockJPARepository extends JpaRepository<StockEntity, StockId>, IStockRepository {
 }

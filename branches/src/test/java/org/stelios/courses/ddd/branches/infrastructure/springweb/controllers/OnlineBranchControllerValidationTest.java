@@ -39,8 +39,8 @@ public class OnlineBranchControllerValidationTest {
 
     @Test
     void getAll_succeeds_whenBranchExists() throws Exception {
-        List<BranchEntity> expectedResponseBranches = List.of(new BranchEntity("id1", "description1", "owner1", "city1"));
-        when(branchService.getAll()).thenReturn(expectedResponseBranches);
+        List<OnlineBranchEntity> expectedResponseBranches = List.of(new OnlineBranchEntity("id1", "description1", "owner1", "city1"));
+        when(branchService.getAllOnlineBranches()).thenReturn(expectedResponseBranches);
 
         ResultActions responseActions = mvc.perform(get("/branches/online").accept(MediaType.APPLICATION_JSON));
 

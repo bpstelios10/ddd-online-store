@@ -5,7 +5,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@ConditionalOnProperty(value = "service.database.embedded", havingValue = "false")
-//TODO change ID field
+@ConditionalOnProperty(value = "service.database.embedded", havingValue = "false", matchIfMissing = true)
 public interface IPhysicalBranchMongoRepository extends MongoRepository<PhysicalBranchEntity, String>, IPhysicalBranchRepository {
 }

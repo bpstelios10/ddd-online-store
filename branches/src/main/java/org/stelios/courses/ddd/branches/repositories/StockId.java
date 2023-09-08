@@ -1,0 +1,14 @@
+package org.stelios.courses.ddd.branches.repositories;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+import java.io.Serializable;
+
+@Data
+@AllArgsConstructor
+public class StockId implements Serializable {
+    private final int branchId;
+    private final int productId;
+    private final int size;
+}

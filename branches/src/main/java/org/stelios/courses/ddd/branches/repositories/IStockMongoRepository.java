@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @ConditionalOnProperty(value = "service.database.embedded", havingValue = "false", matchIfMissing = true)
-public interface IOnlineBranchMongoRepository extends MongoRepository<OnlineBranchEntity, String>, IOnlineBranchRepository {
+public interface IStockMongoRepository extends MongoRepository<StockEntity, StockId>, IStockRepository {
 }

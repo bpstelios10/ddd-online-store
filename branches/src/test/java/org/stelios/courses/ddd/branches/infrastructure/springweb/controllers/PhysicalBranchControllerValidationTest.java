@@ -39,8 +39,8 @@ public class PhysicalBranchControllerValidationTest {
 
     @Test
     void getAll_succeeds_whenBranchExists() throws Exception {
-        List<BranchEntity> expectedResponseBranches = List.of(new BranchEntity("id1", "description1", "owner1", "city1"));
-        when(branchService.getAll()).thenReturn(expectedResponseBranches);
+        List<PhysicalBranchEntity> expectedResponseBranches = List.of(new PhysicalBranchEntity("id1", "description1", "owner1", "city1", "address1"));
+        when(branchService.getAllPhysicalBranches()).thenReturn(expectedResponseBranches);
 
         ResultActions responseActions = mvc.perform(get("/branches/physical").accept(MediaType.APPLICATION_JSON));
 
@@ -51,7 +51,7 @@ public class PhysicalBranchControllerValidationTest {
 
     @Test
     void create_succeeds_whenValidRequest() throws Exception {
-        PhysicalBranchEntity branch = new PhysicalBranchEntity("id1", "description1", "owner1", "city1", "address10");
+        PhysicalBranchEntity branch = new PhysicalBranchEntity("id1", "description1", "owner1", "city1", "address1");
         doNothing().when(branchService).save(branch);
 
         ResultActions responseActions = mvc.perform(post("/branches/physical")
