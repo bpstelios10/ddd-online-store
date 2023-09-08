@@ -1,6 +1,9 @@
 package org.stelios.courses.ddd.branches.repositories;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,12 +13,15 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "productPrices")
-@Data
 @IdClass(ProductPricesId.class)
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@EqualsAndHashCode
 public class ProductPricesEntity implements Serializable {
     @Id
-    private final int branchId;
+    private int branchId;
     @Id
-    private final int productId;
-    private final float price;
+    private int productId;
+    private float price;
 }
