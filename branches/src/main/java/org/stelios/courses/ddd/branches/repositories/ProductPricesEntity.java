@@ -20,8 +20,8 @@ import java.io.Serializable;
 @EqualsAndHashCode
 public class ProductPricesEntity implements Serializable {
     @Id
-    private int branchId;
+    private String branchId;
     @Id
-    private int productId;
-    private float price;
+    private String productId;
+    private double price;
 }

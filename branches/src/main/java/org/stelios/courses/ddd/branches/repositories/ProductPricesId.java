@@ -10,6 +10,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductPricesId implements Serializable {
-    private int branchId;
-    private int productId;
+    private String branchId;
+    private String productId;
 }

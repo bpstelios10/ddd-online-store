@@ -13,7 +13,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.stelios.courses.ddd.branches.application.BranchService;
-import org.stelios.courses.ddd.branches.repositories.BranchEntity;
 import org.stelios.courses.ddd.branches.repositories.PhysicalBranchEntity;
 
 import java.util.List;
@@ -33,7 +32,6 @@ public class PhysicalBranchControllerValidationTest {
 
     @Autowired
     private MockMvc mvc;
-
     @MockBean
     private BranchService branchService;
 

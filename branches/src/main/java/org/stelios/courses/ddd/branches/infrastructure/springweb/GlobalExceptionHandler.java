@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 import org.stelios.courses.ddd.branches.application.errors.BranchAlreadyExistsException;
+import org.stelios.courses.ddd.branches.infrastructure.springweb.errors.ProductPriceNotFoundException;
 
 @Slf4j
 @ControllerAdvice
@@ -26,5 +27,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         log.debug("Handling exception: [{}]", ex.getMessage());
 
         return ResponseEntity.ok("Branch with this id already exists");
+    }
+
+    @ExceptionHandler({ProductPriceNotFoundException.class})
+    public ResponseEntity<String> handleProductPriceNotFoundException(ProductPriceNotFoundException ex) {
+        log.debug("Handling exception: [{}]", ex.getMessage());
+
+        return ResponseEntity.notFound().build();
     }
 }
