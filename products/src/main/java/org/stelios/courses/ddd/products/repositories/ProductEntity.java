@@ -1,19 +1,18 @@
 package org.stelios.courses.ddd.products.repositories;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PACKAGE)
+@AllArgsConstructor(access = AccessLevel.PACKAGE)
+@Getter
+@EqualsAndHashCode
 public class ProductEntity {
     @Id
-    protected String id;
-    protected String title;
-    protected String description;
+    private String id;
+    private String title;
+    private String description;
 }

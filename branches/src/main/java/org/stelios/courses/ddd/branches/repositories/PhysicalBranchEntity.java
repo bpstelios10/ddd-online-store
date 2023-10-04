@@ -10,11 +10,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "physicalBranches")
 @Getter
-@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class PhysicalBranchEntity extends BranchEntity {
 
-    protected String address;
+    private String address;
 
     public PhysicalBranchEntity(String id, String description, String owner, String city, String address) {
         super(id, description, owner, city);

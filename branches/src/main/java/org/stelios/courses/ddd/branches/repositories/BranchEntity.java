@@ -1,20 +1,19 @@
 package org.stelios.courses.ddd.branches.repositories;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter
+@AllArgsConstructor(access = AccessLevel.PACKAGE)
+@NoArgsConstructor(access = AccessLevel.PACKAGE)
+@EqualsAndHashCode
 public class BranchEntity {
     @Id
-    protected String id;
-    protected String description;
-    protected String owner;
-    protected String city;
+    private String id;
+    private String description;
+    private String owner;
+    private String city;
 }

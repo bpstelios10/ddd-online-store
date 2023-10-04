@@ -8,6 +8,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.ResponseEntity;
 import org.stelios.courses.ddd.branches.application.BranchService;
 import org.stelios.courses.ddd.branches.repositories.BranchEntity;
+import org.stelios.courses.ddd.branches.repositories.OnlineBranchEntity;
+import org.stelios.courses.ddd.branches.repositories.PhysicalBranchEntity;
 
 import java.util.List;
 
@@ -24,8 +26,8 @@ class BranchControllerTest {
 
     @Test
     void getAllBranches_returnsBranches_whenSomeExist() {
-        BranchEntity branch1 = new BranchEntity("id1", "description1", "owner1", "city1");
-        BranchEntity branch2 = new BranchEntity("id2", "description2", "owner2", "city2");
+        BranchEntity branch1 = new OnlineBranchEntity("id1", "description1", "owner1", "city1");
+        BranchEntity branch2 = new PhysicalBranchEntity("id2", "description2", "owner2", "city2", "address2");
         when(branchService.getAll()).thenReturn(List.of(branch1, branch2));
         ResponseEntity<List<BranchEntity>> expectedResponse = ResponseEntity.ok(List.of(branch1, branch2));
 
