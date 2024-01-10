@@ -8,16 +8,14 @@ buildscript {
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${versions.springBoot}"
         classpath "com.bmuschko:gradle-docker-plugin:${versions.gradleDocker}"
-        classpath "io.franzbecker:gradle-lombok:${versions.gradleLombok}"
     }
 }
 
 apply plugin: 'org.springframework.boot'
 apply plugin: 'java'
-apply plugin: 'io.franzbecker.gradle-lombok'
 
-sourceCompatibility = JavaVersion.VERSION_11
-targetCompatibility = JavaVersion.VERSION_11
+sourceCompatibility = JavaVersion.VERSION_21
+targetCompatibility = JavaVersion.VERSION_21
 group = "org.stelios.courses"
 
 repositories {
@@ -32,6 +30,9 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-validation:${versions.springBoot}"
     implementation 'net.logstash.logback:logstash-logback-encoder:7.3'
     implementation 'org.apache.commons:commons-lang3:3.12.0'
+
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
 
     runtimeOnly 'com.h2database:h2:2.1.214'
 
